@@ -2,12 +2,12 @@ const express = require("express");
 const router = express.Router();
 const verify = require("../middelwares/verifyToken");
 const Category = require("./../modal/Category");
-const products = require("../modal/addService");
+const service = require("../modal/addService");
 const Orders = require("./../modal/addorder");
 
-router.get("/getproduct", async (req, res) => {
+router.get("/getServices", async (req, res) => {
   try {
-    const getproduct = await products.find();
+    const getproduct = await service.find();
 
     res.send({
       posts: getproduct,
