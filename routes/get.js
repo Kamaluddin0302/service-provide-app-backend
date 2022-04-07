@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const verify = require("../middelwares/verifyToken");
 const Category = require("./../modal/Category");
-const products = require("./../modal/addproduct");
+const products = require("../modal/addService");
 const Orders = require("./../modal/addorder");
 
 router.get("/getproduct", async (req, res) => {

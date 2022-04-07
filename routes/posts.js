@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const verify = require("../middelwares/verifyToken");
 const Category = require("./../modal/Category");
-const products = require("./../modal/addproduct");
+const services = require("../modal/addService");
 const Orders = require("./../modal/addorder");
 
 router.post("/", (req, res) => {
@@ -35,28 +35,18 @@ router.get("/", (req, res) => {
   }
 });
 
-router.post("/addProduct", async (req, res) => {
+router.post("/addservice", async (req, res) => {
   console.log(req.body);
-  let {
-    Product_Name,
-    Product_ShotDetail,
-    Product_Price,
-    Product_Catagery,
-    Product_Full_Detail,
-    image,
-  } = req.body;
+  let { serviceName, serviceDetail, serviceImage } = req.body;
   // create new Product
-  const product = new products({
-    Product_Name,
-    Product_ShotDetail,
-    Product_Price,
-    Product_Catagery,
-    Product_Full_Detail,
-    image,
+  const service = new services({
+    serviceName,
+    serviceDetail,
+    serviceImage,
   });
   try {
-    const savedproduct = await product.save();
-    res.send({ result: "success", message: savedproduct });
+    const savedservice = await service.save();
+    res.send({ result: "success", message: savedservice });
   } catch (err) {
     res.status(400).send({ result: "error", message: err });
   }
