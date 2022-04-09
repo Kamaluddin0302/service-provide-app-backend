@@ -14,6 +14,14 @@ const userSchema = new mongoose.Schema({
     max: 255,
     min: 1,
   },
+
+  address: {
+    type: String,
+    required: true,
+    unique: true,
+    max: 255,
+    min: 1,
+  },
   password: {
     type: String,
     required: true,
