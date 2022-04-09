@@ -17,6 +17,7 @@ const userSchema = new mongoose.Schema({
 
   address: {
     type: String,
+    required: true,
     max: 255,
     min: 1,
   },
