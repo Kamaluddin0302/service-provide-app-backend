@@ -41,7 +41,7 @@ router.post("/register", async (req, res) => {
     const savedUser = await user.save();
     res.send({ result: "success", user: savedUser });
   } catch (err) {
-    res.send({ result: "error", message: err });
+    res.send({ result: "error", message: "Email already exist" });
   }
 });
 
