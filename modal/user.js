@@ -14,13 +14,6 @@ const userSchema = new mongoose.Schema({
     max: 255,
     min: 1,
   },
-
-  address: {
-    type: String,
-    required: true,
-    max: 255,
-    min: 1,
-  },
   password: {
     type: String,
     required: true,
@@ -28,6 +21,12 @@ const userSchema = new mongoose.Schema({
     min: 1,
   },
 
+  address: {
+    type: String,
+    require: true,
+    min: 1,
+    max: 255,
+  },
   date: {
     type: Date,
     default: Date.now,
