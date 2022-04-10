@@ -4,6 +4,7 @@ const verify = require("../middelwares/verifyToken");
 const Category = require("./../modal/Category");
 const services = require("../modal/addService");
 const Orders = require("./../modal/addorder");
+const booktechnician = require("./../modal/booktechnician");
 
 router.post("/", (req, res) => {
   try {
@@ -47,6 +48,23 @@ router.post("/addservice", async (req, res) => {
   try {
     const savedservice = await service.save();
     res.send({ result: "success", message: savedservice });
+  } catch (err) {
+    res.status(400).send({ result: "error", message: err });
+  }
+});
+
+router.post("/booktechnician", async (req, res) => {
+  console.log(req.body);
+  let { detail, address, image } = req.body;
+  // create new Product
+  const technician = new booktechnician({
+    detail,
+    address,
+    image,
+  });
+  try {
+    const savedTechnician = await technician.save();
+    res.send({ result: "success", message: savedTechnician });
   } catch (err) {
     res.status(400).send({ result: "error", message: err });
   }
