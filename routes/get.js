@@ -114,7 +114,7 @@ router.delete("/deleteService/:id", async (req, res) => {
     const getservice = await service.findOneAndDelete({ _id: req.params.id });
 
     res.send({
-      posts: getproduct,
+      posts: getservice,
       result: "success",
     });
   } catch (error) {
