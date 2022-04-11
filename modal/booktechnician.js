@@ -13,6 +13,14 @@ const bookTechnicianSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  uid: {
+    type: String,
+    require: true,
+  },
+  userName: {
+    type: String,
+    require: true,
+  },
   date: {
     type: Date,
     default: Date.now,

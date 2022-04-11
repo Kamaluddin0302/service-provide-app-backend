@@ -55,12 +55,14 @@ router.post("/addservice", async (req, res) => {
 
 router.post("/booktechnician", async (req, res) => {
   console.log(req.body);
-  let { detail, address, image } = req.body;
+  let { detail, address, image, uid, userName } = req.body;
   // create new Product
   const technician = new booktechnician({
     detail,
     address,
     image,
+    uid,
+    userName,
   });
   try {
     const savedTechnician = await technician.save();
