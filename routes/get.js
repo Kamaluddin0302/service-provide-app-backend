@@ -4,6 +4,7 @@ const verify = require("../middelwares/verifyToken");
 const Category = require("./../modal/Category");
 const service = require("../modal/addService");
 const Orders = require("./../modal/addorder");
+const OrdersTechnician = require("./../modal/booktechnician");
 
 router.get("/getServices", async (req, res) => {
   try {
@@ -55,7 +56,7 @@ router.get("/getorder", async (req, res) => {
 router.get("/getCurrentUserOrder", async (req, res) => {
   console.log(req.query);
   try {
-    const getorder = await Orders.find(req.query);
+    const getorder = await OrdersTechnician.find(req.query);
     res.send({
       posts: getorder,
     });
