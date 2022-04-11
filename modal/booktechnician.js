@@ -21,6 +21,14 @@ const bookTechnicianSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  serviceName: {
+    type: String,
+    require: true,
+  },
+  serviceImage: {
+    type: String,
+    require: true,
+  },
   date: {
     type: Date,
     default: Date.now,
