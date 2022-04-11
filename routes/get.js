@@ -52,6 +52,21 @@ router.get("/getorder", async (req, res) => {
   }
 });
 
+router.get("/getCurrentUserOrder", async (req, res) => {
+  console.log(req.query);
+  try {
+    const getorder = await Orders.find(req.query);
+    res.send({
+      posts: getorder,
+    });
+  } catch (error) {
+    res.send({
+      message: error.message,
+      result: "error",
+    });
+  }
+});
+
 router.put("/updateorder/:id", async (req, res) => {
   console.log(req.query);
   try {
