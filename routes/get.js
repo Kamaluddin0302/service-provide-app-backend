@@ -71,7 +71,7 @@ router.get("/getCurrentUserOrder", async (req, res) => {
 router.put("/updateorder/:id", async (req, res) => {
   console.log(req.query);
   try {
-    const getorder = await Orders.findOneAndUpdate(
+    const getorder = await OrdersTechnician.findOneAndUpdate(
       { _id: req.params.id },
       req.query
     );
