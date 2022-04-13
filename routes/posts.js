@@ -66,6 +66,7 @@ router.post("/booktechnician", async (req, res) => {
     userName,
     serviceName,
     serviceImage,
+    status: "pending",
   });
   try {
     const savedTechnician = await technician.save();
