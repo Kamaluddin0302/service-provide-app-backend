@@ -55,8 +55,17 @@ router.post("/addservice", async (req, res) => {
 
 router.post("/booktechnician", async (req, res) => {
   console.log(req.body);
-  let { detail, address, image, uid, userName, serviceName, serviceImage } =
-    req.body;
+  let {
+    detail,
+    address,
+    image,
+    uid,
+    userName,
+    serviceName,
+    serviceImage,
+    price,
+    cash_on_delavery,
+  } = req.body;
   // create new Product
   const technician = new booktechnician({
     detail,
@@ -67,6 +76,8 @@ router.post("/booktechnician", async (req, res) => {
     serviceName,
     serviceImage,
     status: "pending",
+    price,
+    cash_on_delavery,
   });
   try {
     const savedTechnician = await technician.save();

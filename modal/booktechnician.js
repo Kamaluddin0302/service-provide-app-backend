@@ -33,6 +33,15 @@ const bookTechnicianSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  price: {
+    type: String,
+    require: true,
+  },
+  cash_on_delavery: {
+    type: String,
+    require: true,
+  },
+
   date: {
     type: Date,
     default: Date.now,
