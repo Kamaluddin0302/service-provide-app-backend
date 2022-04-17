@@ -17,7 +17,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
-  console.log("port is running");
+  console.log("port is running....");
 });
 
 app.use("/", require("./routes/index"));
