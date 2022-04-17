@@ -42,6 +42,15 @@ const bookTechnicianSchema = new mongoose.Schema({
     require: true,
   },
 
+  reachtime: {
+    type: String,
+    require: true,
+  },
+  technicianLocatio: {
+    type: String,
+    require: true,
+  },
+
   date: {
     type: Date,
     default: Date.now,

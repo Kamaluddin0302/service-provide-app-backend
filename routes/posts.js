@@ -78,6 +78,8 @@ router.post("/booktechnician", async (req, res) => {
     status: "pending",
     price,
     cash_on_delavery,
+    technicianLocatio: null,
+    reachtime: null,
   });
   try {
     const savedTechnician = await technician.save();
